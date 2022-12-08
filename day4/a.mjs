@@ -14,8 +14,6 @@ let inputArray = input.split("\n");
 //   return sum;
 // };
 
-// '9-11,10-69'
-// const sample = '9-11,10-69'
 
 function isContained(line) {
   let assignments = line.split(",");
