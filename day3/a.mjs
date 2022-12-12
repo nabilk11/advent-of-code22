@@ -2,10 +2,7 @@ import input from "./input.mjs";
 
 const eachLine = input.split("\n");
 
-
-
-
-// Main function for solve 
+// Main function for solve
 const fn = () => {
   let sum = 0;
   for (let i = 0; i < eachLine.length; i++) {
@@ -18,11 +15,8 @@ const fn = () => {
   return sum;
 };
 
-const res = fn()
-console.log(res)
-
-
-
+const res = fn();
+// console.log(res);
 
 // Hashmap for letter scores
 function score(char) {
@@ -83,6 +77,29 @@ function score(char) {
   return hash[char];
 }
 
+// create hash instead of manually (hardcoding) assigning priorities 
+function score2(char) {
+  let scoreObj = {};
+  const alpaString = "abcdefghijklmnopqrstuvwxyz";
+  const capitalized = alpaString.toUpperCase();
+
+  const concatanated = alpaString + capitalized;
+  for (let i in concatanated) {
+    scoreObj[concatanated[i]] = concatanated.indexOf(concatanated[i]) + 1;
+  }
+  return scoreObj[char];
+}
+
+// with reduce method
+const score3 = (char, a = "abcdefghijklmnopqrstuvwxyz") =>
+  [...a.concat(a.toUpperCase())].reduce(
+    (acc, ltr, idx) => ({ ...acc, [ltr]: idx + 1 }),
+    {}
+  )[char];
+
+const result = score2("M");
+console.log(result);
+
 // returns the matching chars
 function findMatchingChars(firstHalf, secondHalf) {
   let matchingChars = [];
@@ -94,8 +111,6 @@ function findMatchingChars(firstHalf, secondHalf) {
   }
   return [...new Set(matchingChars)]; // gives me only the uniquely matching letters in the array
 }
-
-
 
 // Function to split each string in half
 function splitString(str) {

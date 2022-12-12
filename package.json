@@ -1,0 +1,23 @@
+{
+  "name": "advent-of-code22",
+  "version": "1.0.0",
+  "description": "- It's like the 25 days of Christmas, but with code...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabilk11/advent-of-code22.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nabilk11/advent-of-code22/issues"
+  },
+  "homepage": "https://github.com/nabilk11/advent-of-code22#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
